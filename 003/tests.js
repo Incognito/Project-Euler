@@ -1,8 +1,8 @@
 
 var factor = new P003();
 
-//print("foo", factor.foo(10));
+print("Primes up to 100", factor.generatePrimeSeries(100));
 print();
-print("factors of 1395: ", factor.factor(13195));
+//print("factors of 1395: ", factor.factor(13195));
 
 
