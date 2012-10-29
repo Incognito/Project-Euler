@@ -7,15 +7,6 @@ var P003 = (function(){
         var self=this;
     };
     
-    factor.prototype.factor = function(n){
-        var self=this;
-        var series = self.generateSeries(n);
-
-        var halfLimit = Math.ceil(limit/2);
-
-        return series;
-    };
-
     factor.prototype.generatePrimeSeries = function(limit) {
         var self=this;
         var i;
@@ -25,7 +16,6 @@ var P003 = (function(){
             var i;
             var divided;
             for (i=0; i<series.length; i+=1) {
-                write(series[i] + "\t");
                 var divided = number/series[i];
                 if (divided === Math.floor(divided)) {
                     return i;
@@ -42,6 +32,23 @@ var P003 = (function(){
         
         return series;
     };
+
+    factor.prototype.largestFactor = function(target){
+        var self=this;
+        var i;
+        var halfLimit = Math.ceil(target/2);
+        var series = self.generatePrimeSeries(halfLimit);
+        print('\tSeries done:' + series.length)
+
+        for (i = series.length -1; i> 0; i--) {
+            if (Math.floor(target/series[i]) === target/series[i]) {
+                print('\prime found' + i, series[i])
+                return series[i];
+            }
+        }
+        return "Error";
+    };
+
 
     return factor;
 }());
