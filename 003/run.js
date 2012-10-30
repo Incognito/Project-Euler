@@ -1,2 +1,2 @@
-load("alpha.js")
+load("beta.js")
 load("tests.js")

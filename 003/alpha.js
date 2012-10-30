@@ -1,5 +1,9 @@
 /*
  * First attempt at solving the problem
+ *   Over 9.5 hours cpu time on an n2600 core
+ *   did not solve even the list of primes, 
+ *   much less checking for the greatest 
+ *   divisor.
  **/
 var P003 = (function(){
 
