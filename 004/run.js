@@ -1,2 +1,2 @@
-load("alphajs")
+load("alpha.js")
 load("tests.js")
