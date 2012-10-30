@@ -10,7 +10,7 @@ var P002 = (function(){
     fib.prototype.fib = function(n){
         var self=this;
         var series = self.generateSeries(n);
-        var sum = self.sum(series);
+        var sum = self.sumEvenValueTerms(series);
         return sum;
     };
 
@@ -25,11 +25,13 @@ var P002 = (function(){
         return series;
     };
 
-    fib.prototype.sum = function(list){
+    fib.prototype.sumEvenValueTerms = function(list) {
       var self=this;
       var sum=0;
       for(var i=0;i<list.length;i++){
-        sum+=list[i];
+        if (0 === (list[i] % 2)) {
+          sum+=list[i];
+        }
       }
       return sum;
     };
