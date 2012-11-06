@@ -12,30 +12,32 @@ var P004 = (function(){
         var self=this;
         var j, k;
 
-        var ceiling = Math.pow(10, n);
+        var ceiling = Math.pow(10, n -1);
 
         for (j=1; j<ceiling; j++) {
             for (k=1; k<ceiling; k++) {
                 if (self.checkPalindrome(j*k)){
-                    print(j*k, j, k)
                 }
             }
+            print();
         }
 
     };
 
     palin.prototype.checkPalindrome = function(target) {
-        var len = target.length - 1;
+        var targetStr = "" + target;
+        var len = targetStr.length;
         var mid = Math.floor(len/2);
         var i;
-        var targetStr = "" + target;
 
         for (i=0; i<mid; i++) {
             if (targetStr[i] !== targetStr[len-i]) {
-                return false;
+               return false;
             }
         }
-          return true;
+        write(targetStr);
+        write("\t");
+        return true;
     }
 
     return palin;
