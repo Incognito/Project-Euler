@@ -19,7 +19,6 @@ var P004 = (function(){
                 if (self.checkPalindrome(j*k)){
                 }
             }
-            print();
         }
 
     };
@@ -28,6 +27,7 @@ var P004 = (function(){
         var targetStr = "" + target;
         var len = targetStr.length;
         var mid = Math.floor(len/2);
+        var len = len -1;
         var i;
 
         for (i=0; i<mid; i++) {
@@ -36,7 +36,7 @@ var P004 = (function(){
             }
         }
         write(targetStr);
-        write("\t");
+        write("\t")
         return true;
     }
 
