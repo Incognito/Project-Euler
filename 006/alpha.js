@@ -26,11 +26,13 @@ var P006 = (function() {
     
     squares.prototype.difference = function(n) {
         var self=this;
-        
-        var airthmeticSum   = self.arithmeticSum(1, n);
+        var squareOfSum;
+
+        var airthmeticSum = self.arithmeticSum(1, n);
+        squareOfSum = airthmeticSum * airthmeticSum;
         var squareSeriesSum = self.squareSeriesSum(n);
         
-        return squareSeriesSum - airthmeticSum;
+        return squareOfSum - squareSeriesSum;
     };
     
     return squares;
