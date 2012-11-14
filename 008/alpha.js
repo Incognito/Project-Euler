@@ -4,8 +4,24 @@ var P008 = (function(){
         var self=this;
     };
     
-    productNumber.prototype.find = function(foo) {
+    productNumber.prototype.find = function(numberValue) {
+        var self=this;
         
+        var numberByGroupsWithoutZeros = self.groupsExcludingZero(
+            self.numberIntoGroups(numberValue, 5)
+        );
+        return numberByGroupsWithoutZeros;
+    };
+
+    productNumber.prototype.multiplyDigits = function(digitString) {
+        var i;
+        var product = 1;
+        
+        for (i=0; i < digitString.length; i +=1 ) {
+            product *= digitString[i];
+        }
+
+        return product;
     };
 
     productNumber.prototype.groupsExcludingZero = function(groups) {
