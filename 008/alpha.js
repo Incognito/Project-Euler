@@ -10,14 +10,34 @@ var P008 = (function(){
         var numberByGroupsWithoutZeros = self.groupsExcludingZero(
             self.numberIntoGroups(numberValue, 5)
         );
-        return numberByGroupsWithoutZeros;
+
+        var products = self.getProductOfList(numberByGroupsWithoutZeros);
+        
+        return products;
+    };
+
+    productNumber.prototype.findMaxProduct = function(list) {
+        
+    };
+
+    productNumber.prototype.getProductOfList = function(list) {
+        var self=this;
+        var digitString;
+        var i;
+        var products ={};
+        for (i=0; i < list.length; i += 1) {
+            digitString = list[i]
+            products[digitString] = self.multiplyDigits(digitString);
+        }
+        return products;
     };
 
     productNumber.prototype.multiplyDigits = function(digitString) {
+        var self=this;
         var i;
         var product = 1;
-        
-        for (i=0; i < digitString.length; i +=1 ) {
+
+        for (i=0; i < digitString.length; i += 1) {
             product *= digitString[i];
         }
 
@@ -25,6 +45,7 @@ var P008 = (function(){
     };
 
     productNumber.prototype.groupsExcludingZero = function(groups) {
+        var self=this;
         var i=0;
         var cleanList = [];
         do {
@@ -38,6 +59,7 @@ var P008 = (function(){
     };
 
     productNumber.prototype.numberIntoGroups = function(numberValue, groupsOf) {
+        var self=this;
         var i;
         var groupList = [];
         for (i=0; i < numberValue.length - groupsOf; i +=1) {
