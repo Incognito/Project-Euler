@@ -16,13 +16,21 @@ var P008 = (function(){
                 cleanList.push(groups[i])
             }
             i +=1;
-        } while (i < groups.length) 
+        } while (i < groups.length)
 
         return cleanList;
     };
 
-    productNumber.prototype.numberIntoGroups = function(foo) {
-        
+    productNumber.prototype.numberIntoGroups = function(numberValue, groupsOf) {
+        var i;
+        var groupList = [];
+        for (i=0; i < numberValue.length - groupsOf; i +=1) {
+            groupList[i] = "";
+            for (j=0; j < groupsOf; j +=1) {
+                groupList[i] += numberValue[i + j];
+            }
+        }
+        return groupList;
     };
 
     return productNumber;
