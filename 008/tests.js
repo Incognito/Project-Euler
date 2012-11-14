@@ -2,8 +2,22 @@ var number = "731671765313306249192251196744265747423553491949349698352031277450
 
 
 var number = "1234567890"
-
+var groups = [
+  "12345",
+  "02345",
+  "10345",
+  "99999",
+  "12045",
+  "12305",
+  "12340",
+  "88888",
+  "51l15"
+];
 var productSub = new P008();
+
+print(productSub.groupsExcludingZero(groups));
+
+print(productSub.numberIntoGroups(number));
 
 print(productSub.find(number));
 
