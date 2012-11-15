@@ -13,10 +13,20 @@ var P008 = (function(){
 
         var products = self.getProductOfList(numberByGroupsWithoutZeros);
         
-        return products;
+        return self.findMaxProduct(products);
     };
 
     productNumber.prototype.findMaxProduct = function(list) {
+        var self=this;
+        var i;
+        var max=0;
+        for (i in list) {
+            if (list.hasOwnProperty(i)) {
+                max = Math.max(max, list[i]);
+            }
+        }
+
+        return max;
         
     };
 
